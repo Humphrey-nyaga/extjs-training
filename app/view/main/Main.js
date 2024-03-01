@@ -100,12 +100,23 @@ Ext.define("MsTraining.view.main.Main", {
           xtype: "postgrid",
         },
       ],
-    },  {
+    },
+    {
       title: "Albums",
-      iconCls: "fa-user",
+      iconCls: "fa-images",
       items: [
         {
           xtype: "albumgrid",
+        },
+      ],
+    },
+    // <FontAwesomeIcon icon="fa-solid " />
+    {
+      title: "Todos",
+      iconCls: "fa-solid fa-list",
+      items: [
+        {
+          xtype: "todogrid",
         },
       ],
     },

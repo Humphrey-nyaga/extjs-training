@@ -2,9 +2,11 @@ Ext.define("MsTraining.view.posts.PostGrid", {
   extend: "Ext.grid.Panel",
   xtype: "postgrid",
   controller: "postgridviewcontroller",
+
   store: {
-    type: "post",
+    type: "posts",
   },
+  
   columns: [
     { dataIndex: "id", text: "ID" },
     { dataIndex: "title", text: "Title", flex: 1 },

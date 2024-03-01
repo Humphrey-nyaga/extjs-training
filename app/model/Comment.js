@@ -6,10 +6,9 @@ Ext.define(
 
     fields: [
       { name: "postId", reference: "Post", type: "int" }, // define association between objects
-      "id",
-      "name",
-      "email",
-      "body",
+      { name: "id", type: "int" },
+      { name: "name", type: "string" },
+      { name: "body", type: "string" },
     ],
     proxy: {
       type: "rest",
