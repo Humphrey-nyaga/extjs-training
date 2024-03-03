@@ -3,7 +3,7 @@ Ext.define("MsTraining.view.posts.PostFormWindow", {
   xtype: "postformwindow",
 
   requires: ["MsTraining.view.post.PostGridViewController"],
-  controller: "postgridviewcontroller",
+  controller: "postformcontroller",
 
   title: "Create a Post",
   width: 450,
@@ -15,6 +15,8 @@ Ext.define("MsTraining.view.posts.PostFormWindow", {
     {
       xtype: "form",
       layout: "anchor",
+      reference: "postform",
+      itemId: "postform",
       items: [
         {
           fieldLabel: "User ID",
@@ -54,7 +56,7 @@ Ext.define("MsTraining.view.posts.PostFormWindow", {
           //   }
           // },
           listeners: {
-            click: "onSaveNewPost",
+            click: "onSaveClick",
           },
         },
         {

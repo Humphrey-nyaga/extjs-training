@@ -88,9 +88,11 @@ Ext.define("MsTraining.view.main.Main", {
     {
       title: "Users",
       iconCls: "fa-user",
-      bind: {
-        html: "{loremIpsum}",
-      },
+      items: [
+        {
+          xtype: "usergrid",
+        },
+      ],
     },
     {
       title: "Posts",
