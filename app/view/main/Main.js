@@ -123,6 +123,15 @@ Ext.define("MsTraining.view.main.Main", {
       ],
     },
     {
+      title: "Checkout",
+      iconCls: "fas fa-shopping-cart",
+      items: [
+        {
+          xtype: "checkoutgrid",
+        },
+      ],
+    },
+    {
       title: "Settings",
       iconCls: "fa-cog",
       bind: {

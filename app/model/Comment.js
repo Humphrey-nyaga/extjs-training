@@ -6,17 +6,12 @@ Ext.define(
 
     fields: [
       { name: "postId", reference: "Post", type: "int" }, // define association between objects
-      { name: "id", type: "int" },
+      { name: "_id", type: "int" },
       { name: "name", type: "string" },
       { name: "body", type: "string" },
+      { name: "email", type: "string" },
     ],
-    proxy: {
-      type: "rest",
-      url: "https://jsonplaceholder.typicode.com/comments",
-      readers: {
-        type: "json",
-      },
-    },
+
     validators: [
       {
         postId: ["presence"],

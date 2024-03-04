@@ -4,6 +4,7 @@ Ext.define(
   {
     extend: "Ext.grid.Panel",
     xtype: "todogrid",
+    title: "Todos",
     store: {
       type: "todo",
     },

@@ -32,4 +32,17 @@ Ext.define("MsTraining.view.post.PostGridViewController", {
 
     //  this.getView().destroy();
   },
+
+  onPostCommentSelected: function (selModel, record, index, options) {
+    console.log(record);
+    var commentStore = Ext.create("MsTraining.store.Comment");
+    commentStore.filterByPostId(record.id);
+
+
+    console.log(commentStore);
+
+    var grid = this.getView().lookupReference("postcommentsgrid");
+    grid.setStore(commentStore);
+    grid.show();
+  },
 });

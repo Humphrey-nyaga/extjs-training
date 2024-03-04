@@ -1,18 +1,23 @@
 Ext.define("MsTraining.model.User", {
   extend: "Ext.data.Model",
-  idProperty: "id",
-  fields: ["id", "name", "username", "email", "phone", "website"],
+  idProperty: "_id",
+  fields: [
+    "_id",
+    "name",
+    "username",
+    "email",
+    "phone",
+    "website",
+    { name: "street", type: "string" },
+    { name: "suite", type: "string" },
+    { name: "city", type: "string" },
+    { name: "zipcode", type: "string" },
+    { name: "lat", type: "string" },
+    { name: "lng", type: "string" },
+    { name: "companyName", type: "string" },
+    { name: "companyCatchPhrase", type: "string" },
+    { name: "companyBs", type: "string" },
+  ],
 
-  proxy: {
-    type: "rest",
-    url: "http://localhost:8080/api/v1/user",
-    disableCaching:false,
-    api: {
-      read: "http://localhost:8080/api/v1/user/",
-      create: "http://localhost:8080/api/v1/user/",
-    },
-    reader: {
-      type: "json"
-    },
-  },
+  
 });

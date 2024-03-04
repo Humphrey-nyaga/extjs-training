@@ -15,7 +15,7 @@ Ext.define("MsTraining.users.UserFormController", {
     if (form.isValid()) {
       // make ajax request
       form.submit({
-        url: "http://localhost:8080/api/v1/user/",
+        url: "http://localhost:3000/users/",
         method: "POST",
         jsonSubmit: true, 
         headers: {

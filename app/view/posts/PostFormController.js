@@ -3,10 +3,9 @@ Ext.define("MsTraining.posts.PostFormController", {
   alias: "controller.postformcontroller",
   init: function () {},
 
-
   onSaveClick: function (btn, e, eOpts) {
     let window = this.getView();
-    
+
     let references = window.getReferences();
     console.log(references);
 
@@ -32,4 +31,5 @@ Ext.define("MsTraining.posts.PostFormController", {
     }
   },
   onResetClick: function (btn, e, eOpts) {},
+  
 });

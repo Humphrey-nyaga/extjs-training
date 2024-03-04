@@ -27,7 +27,7 @@ Ext.define("MsTraining.view.users.UserFormWindow", {
       items: [
         {
           fieldLabel: "ID",
-          name: "id",
+          name: "_id",
           emptyText: "user ID",
           disabled: true,
           submitValue: false

@@ -1,14 +1,7 @@
 Ext.define("MsTraining.model.Post", {
   extend: "Ext.data.Model",
-  idProperty: "id",
-  fields: ["userId", "id", "title", "body"],
+  idProperty: "_id",
+  fields: ["userId", "_id", "title", "body"],
 
-  proxy: {
-    type: "ajax",
-    url: "https://jsonplaceholder.typicode.com/posts",
-    enablePaging:true,
-    reader: {
-      type: "json",
-    },
-  },
+
 });

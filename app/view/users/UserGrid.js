@@ -2,18 +2,28 @@ Ext.define("MsTraining.view.users.UserGrid", {
   extend: "Ext.grid.Panel",
   xtype: "usergrid",
   controller: "usergridviewcontroller",
+  title: "Users",
 
   store: {
     type: "users",
   },
 
   columns: [
-    { dataIndex: "id", text: "User ID" },
+    { dataIndex: "_id", text: "User ID" },
     { dataIndex: "username", text: "Username" },
-    { dataIndex: "name", text: "Name", flex: 1 },
-    { dataIndex: "email", text: "Email", flex: 1 },
-    { dataIndex: "phone", text: "Phone", flex: 1 },
+    { dataIndex: "name", text: "Name" },
+    { dataIndex: "email", text: "Email" },
+    { dataIndex: "phone", text: "Phone" },
     { dataIndex: "website", text: "Website", flex: 1 },
+    { dataIndex: "street", text: "Street" },
+    { dataIndex: "suite", text: "Suite" },
+    { dataIndex: "city", text: "City" },
+    { dataIndex: "zipcode", text: "Zipcode" },
+    { dataIndex: "lat", text: "Latitude" },
+    { dataIndex: "lng", text: "Longitude", flex: 1 },
+    { dataIndex: "companyName", text: "Company Name", flex: 1 },
+    { dataIndex: "companyCatchPhrase", text: "CatchPhrase" },
+    { dataIndex: "companyBs", text: "bs", flex: 1 },
   ],
   selModel: {
     selType: "checkboxmodel",
@@ -31,7 +41,7 @@ Ext.define("MsTraining.view.users.UserGrid", {
     {
       xtype: "pagingtoolbar",
       displayInfo: true,
-      pageSize: 10,
+      pageSize: 25,
     },
   ],
   scrollable: true,
