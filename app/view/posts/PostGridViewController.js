@@ -33,16 +33,26 @@ Ext.define("MsTraining.view.post.PostGridViewController", {
     //  this.getView().destroy();
   },
 
-  onPostCommentSelected: function (selModel, record, index, options) {
-    console.log(record);
-    var commentStore = Ext.create("MsTraining.store.Comment");
-    commentStore.filterByPostId(record.id);
-
-
-    console.log(commentStore);
-
+  onPostCommentSelected: function (
+    table,
+    td,
+    cellIndex,
+    record,
+    tr,
+    rowIndex,
+    e,
+    eOpts
+  ) {
     var grid = this.getView().lookupReference("postcommentsgrid");
-    grid.setStore(commentStore);
-    grid.show();
+    let commentStore = grid.getStore();
+    console.log(grid)
+      commentStore.reload({
+        params: {
+          postId: record.data._id,
+        },
+        callback: function (records, operation, success) {
+          grid.setHidden(false); 
+        },
+      });
   },
 });

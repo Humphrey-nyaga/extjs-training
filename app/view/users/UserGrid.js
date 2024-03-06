@@ -36,14 +36,22 @@ Ext.define("MsTraining.view.users.UserGrid", {
         click: "onAddUserClicked",
       },
     },
-  ],
-  bbar: [
+    "->",
     {
-      xtype: "pagingtoolbar",
-      displayInfo: true,
-      pageSize: 25,
+      text: "SELECT",
+      listeners: {
+        click: "onSelectAlbumAndPostClicked",
+      },
     },
   ],
+  bbar: {
+    xtype: "pagingtoolbar",
+    displayInfo: true,
+    pageSize: 25,
+  },
+  listeners: {
+    cellclick: "onClickUserRowCell",
+  },
   scrollable: true,
-  height: 600,
+  height: 900,
 });

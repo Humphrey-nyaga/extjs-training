@@ -5,19 +5,16 @@ Ext.define("MsTraining.store.Posts", {
   requires: ["MsTraining.model.Post"],
   autoLoad: true,
   sorters: ["id", "title"],
+  pageSize: 25,
 
   proxy: {
-    type: "ajax",
-    url: "http://localhost:3000/posts",
-    enablePaging: true,
+    type: "rest",
+    url: "http://localhost:3000/posts/",
     reader: {
       type: "json",
       rootProperty: "rows",
       totalProperty: "totalCount",
     },
   },
-  pageSize: 25,
-
- 
 });
 

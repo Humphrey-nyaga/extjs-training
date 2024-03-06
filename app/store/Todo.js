@@ -3,7 +3,16 @@ Ext.define("MsTraining.store.Todo", {
   model: "MsTraining.model.Todo",
   alias: "store.todo",
   requires: ["MsTraining.model.Todo"],
-  autoLoad: {
-    start:1, limit:25
+  autoLoad: false,
+  pageSize:25,
+  
+  proxy: {
+    type: "rest",
+    url: "http://localhost:3000/todos/",
+    reader: {
+      type: "json",
+      rootProperty: "rows",
+      totalProperty: "totalCount",
+    },
   },
 });

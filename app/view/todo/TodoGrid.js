@@ -9,18 +9,18 @@ Ext.define(
       type: "todo",
     },
     columns: [
-      { dataIndex: "id", text: "Id" },
+      { dataIndex: "_id", text: "Id" },
       { dataIndex: "title", text: "Title", flex: 2 },
       { dataIndex: "userId", text: "User ID" },
       { dataIndex: "completed", text: "Completed Status" },
     ],
-    bbar: [
+    bbar: 
       {
         xtype: "pagingtoolbar",
         displayInfo: true,
         pageSize: 10,
       },
-    ],
+    
     height: 600,
   }
 );

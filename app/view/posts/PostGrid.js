@@ -29,9 +29,6 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       selModel: {
         selType: "checkboxmodel",
         mode: "SINGLE",
-        listeners: {
-          select: "onPostCommentSelected",
-        },
       },
       // tbar: [
       //   {
@@ -47,6 +44,9 @@ Ext.define("MsTraining.view.posts.PostGrid", {
           displayInfo: true,
         },
       ],
+      listeners: {
+        cellclick: "onPostCommentSelected",
+      },
       scrollable: true,
     },
     {
@@ -60,7 +60,8 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       hidden: true,
       collapsible: true,
       collapseDirection: "right",
-     
+      store: { type: "comments" },
+
       bbar: [
         {
           xtype: "pagingtoolbar",

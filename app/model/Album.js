@@ -1,6 +1,6 @@
 Ext.define("MsTraining.model.Album", {
   extend: "Ext.data.Model",
-  idProperty: "id",
+  idProperty: "_id",
   //fields: ["userId", "id", "title"],
   fields: [
     {
@@ -8,7 +8,7 @@ Ext.define("MsTraining.model.Album", {
       type: "int",
     },
     {
-      name: "id",
+      name: "_id",
       type: "int",
     },
     {
@@ -17,11 +17,5 @@ Ext.define("MsTraining.model.Album", {
     },
   ],
 
-  proxy: {
-    type: "rest",
-    url: "https://jsonplaceholder.typicode.com/albums",
-    reader: {
-      type: "json",
-    },
-  },
+  
 });

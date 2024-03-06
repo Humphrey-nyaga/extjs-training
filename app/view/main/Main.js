@@ -90,7 +90,7 @@ Ext.define("MsTraining.view.main.Main", {
       iconCls: "fa-user",
       items: [
         {
-          xtype: "usergrid",
+          xtype: "parentpanel",
         },
       ],
     },
@@ -108,17 +108,17 @@ Ext.define("MsTraining.view.main.Main", {
       iconCls: "fa-images",
       items: [
         {
-          xtype: "albumgrid",
+          //  xtype: "albumgrid",
         },
       ],
     },
     // <FontAwesomeIcon icon="fa-solid " />
     {
-      title: "Todos",
+      title: "Comments",
       iconCls: "fa-solid fa-list",
       items: [
         {
-          xtype: "todogrid",
+           //xtype: "commentgrid",
         },
       ],
     },

@@ -10,11 +10,10 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
     {
       xtype: "form",
       title: "Complete Checkout Form",
-      width: 700,
+      height:600,
       autoShow: true,
       closable: true,
       modal: true,
-      layout: "fit",
       bodyPadding: 10,
       scrollable: true,
       frame: true,

@@ -3,5 +3,4 @@ Ext.define("MsTraining.model.Post", {
   idProperty: "_id",
   fields: ["userId", "_id", "title", "body"],
 
-
 });
