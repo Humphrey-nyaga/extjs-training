@@ -11,6 +11,7 @@ Ext.define(
       type: "todo",
     },
     columns: [
+      { xtype: "rownumberer" },
       { dataIndex: "_id", text: "Id" },
       { dataIndex: "title", text: "Title", flex: 2 },
       { dataIndex: "userId", text: "User ID" },
@@ -36,7 +37,7 @@ Ext.define(
         text: "View Todo",
         handler: "onViewTodo",
         bind: {
-           disabled: "{!todogrid.selection}",
+          disabled: "{!todogrid.selection}",
         },
       },
     ],

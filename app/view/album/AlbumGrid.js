@@ -9,6 +9,8 @@ Ext.define("MsTraining.view.album.AlbumGrid", {
   },
 
   columns: [
+    { xtype: "rownumberer" },
+
     { dataIndex: "_id", text: "ID" },
     { dataIndex: "userId", text: "User ID" },
     { dataIndex: "title", text: "Title", flex: 2 },
