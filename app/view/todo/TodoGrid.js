@@ -4,6 +4,7 @@ Ext.define(
   {
     extend: "Ext.grid.Panel",
     xtype: "todogrid",
+    controller: "todogridviewcontroller",
     title: "Todos",
     store: {
       type: "todo",
@@ -14,13 +15,31 @@ Ext.define(
       { dataIndex: "userId", text: "User ID" },
       { dataIndex: "completed", text: "Completed Status" },
     ],
-    bbar: 
+    selModel: {
+      selType: "checkboxmodel",
+      mode: "MULTI",
+    },
+    bbar: {
+      xtype: "pagingtoolbar",
+      displayInfo: true,
+      pageSize: 10,
+    },
+    tbar: [
       {
-        xtype: "pagingtoolbar",
-        displayInfo: true,
-        pageSize: 10,
+        text: "Add Todo",
+        listeners: {
+          click: "onAddTodo",
+        },
       },
-    
+      {
+        text: "View Todo",
+        handler: "onViewTodo",
+        bind: {
+          disabled: "{!todogrid.selection}",
+        },
+      },
+    ],
+
     height: 600,
   }
 );

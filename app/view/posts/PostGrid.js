@@ -44,6 +44,12 @@ Ext.define("MsTraining.view.posts.PostGrid", {
           displayInfo: true,
         },
       ],
+      tbar: [
+        {
+          text: "Add Post",
+
+        },
+      ],
       listeners: {
         cellclick: "onPostCommentSelected",
       },
@@ -57,8 +63,9 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       reference: "postcommentsgrid",
       title: "Comments",
       flex: 1,
-      hidden: true,
+      // hidden: true,
       collapsible: true,
+      collapsed: true,
       collapseDirection: "right",
       store: { type: "comments" },
 

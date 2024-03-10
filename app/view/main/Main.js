@@ -103,25 +103,25 @@ Ext.define("MsTraining.view.main.Main", {
         },
       ],
     },
-    {
-      title: "Albums",
-      iconCls: "fa-images",
-      items: [
-        {
-          //  xtype: "albumgrid",
-        },
-      ],
-    },
-    // <FontAwesomeIcon icon="fa-solid " />
-    {
-      title: "Comments",
-      iconCls: "fa-solid fa-list",
-      items: [
-        {
-           //xtype: "commentgrid",
-        },
-      ],
-    },
+    // {
+    //   title: "Albums",
+    //   iconCls: "fa-images",
+    //   items: [
+    //     {
+    //       //  xtype: "albumgrid",
+    //     },
+    //   ],
+    // },
+    // // <FontAwesomeIcon icon="fa-solid " />
+    // {
+    //   title: "Comments",
+    //   iconCls: "fa-solid fa-list",
+    //   items: [
+    //     {
+    //        //xtype: "commentgrid",
+    //     },
+    //   ],
+    // },
     {
       title: "Checkout",
       iconCls: "fas fa-shopping-cart",
