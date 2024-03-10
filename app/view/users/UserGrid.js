@@ -36,6 +36,10 @@ Ext.define("MsTraining.view.users.UserGrid", {
         click: "onAddUserClicked",
       },
     },
+    {
+      text: "Model Binding",
+      handler: "onModelBinding",
+    },
     "->",
     {
       text: "SELECT",
@@ -46,7 +50,6 @@ Ext.define("MsTraining.view.users.UserGrid", {
         disabled: "{!usergrid.selection}",
       },
     },
-    
   ],
   bbar: {
     xtype: "pagingtoolbar",

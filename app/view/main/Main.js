@@ -86,6 +86,16 @@ Ext.define("MsTraining.view.main.Main", {
       ],
     },
     {
+      title: "Grouping and Summary",
+      iconCls: "fa-user",
+      items: [
+        {
+          xtype: "groupingsummary",
+        },
+      ],
+    },
+
+    {
       title: "Users",
       iconCls: "fa-user",
       items: [

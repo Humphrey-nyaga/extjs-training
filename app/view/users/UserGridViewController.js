@@ -49,4 +49,9 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
       },
     });
   },
+  onModelBinding: function (btn, e, eOpts) {
+    Ext.create({
+      xtype: "modelbindingform",
+    });
+  },
 });
