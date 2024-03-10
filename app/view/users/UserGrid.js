@@ -42,7 +42,11 @@ Ext.define("MsTraining.view.users.UserGrid", {
       listeners: {
         click: "onSelectAlbumAndPostClicked",
       },
+      bind: {
+        disabled: "{!usergrid.selection}",
+      },
     },
+    
   ],
   bbar: {
     xtype: "pagingtoolbar",

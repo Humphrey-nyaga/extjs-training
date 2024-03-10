@@ -2,13 +2,16 @@ Ext.define("MsTraining.view.album.AlbumGrid", {
   extend: "Ext.grid.Panel",
   xtype: "albumgrid",
   title: "Albums",
+  controller: "albumgridviewcontroller",
+
   store: {
     type: "album",
   },
+
   columns: [
     { dataIndex: "_id", text: "ID" },
     { dataIndex: "userId", text: "User ID" },
-    { dataIndex: "title", text: "Title", flex:2 },
+    { dataIndex: "title", text: "Title", flex: 2 },
   ],
   selModel: {
     selType: "checkboxmodel",
@@ -18,6 +21,14 @@ Ext.define("MsTraining.view.album.AlbumGrid", {
     xtype: "pagingtoolbar",
     displayInfo: true,
   },
+  tbar: [
+    {
+      text: "Add Album",
+      listeners: {
+        click: "onAddAlbumClicked",
+      },
+    },
+  ],
   scrollable: true,
   height: 600,
 });

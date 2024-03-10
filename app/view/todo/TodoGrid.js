@@ -5,6 +5,7 @@ Ext.define(
     extend: "Ext.grid.Panel",
     xtype: "todogrid",
     controller: "todogridviewcontroller",
+
     title: "Todos",
     store: {
       type: "todo",
@@ -35,7 +36,7 @@ Ext.define(
         text: "View Todo",
         handler: "onViewTodo",
         bind: {
-          disabled: "{!todogrid.selection}",
+           disabled: "{!todogrid.selection}",
         },
       },
     ],
