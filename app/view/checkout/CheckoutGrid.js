@@ -10,7 +10,7 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
     {
       xtype: "form",
       title: "Complete Checkout Form",
-      height:600,
+      height: 600,
       autoShow: true,
       closable: true,
       modal: true,
@@ -166,7 +166,7 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
                       name: "billingSameAsMailing",
                       reference: "billingSameAsMailing",
 
-                      hideLabel: true,
+                      //hideLabel: true,
                       checked: true,
                       margin: "0 0 10 0",
                       handler: "onSameAddressChange",
@@ -179,7 +179,7 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
 
                       labelWidth: 110,
                       style: "opacity: 0.5",
-                      disabled: true,
+                      //disabled: true,
                       allowBlank: false,
                     },
                     {
@@ -197,7 +197,7 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
                           labelWidth: 110,
                           style: "opacity: 0.5",
                           flex: 1,
-                          disabled: true,
+                          //disabled: true,
                           allowBlank: false,
                         },
                         {
@@ -214,7 +214,7 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
                           displayField: "abbr",
                           typeAhead: true,
                           queryMode: "local",
-                          disabled: true,
+                        //  disabled: true,
                           allowBlank: false,
                           forceSelection: true,
 
@@ -231,7 +231,7 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
                           labelWidth: 80,
                           style: "opacity: 0.5",
                           width: 160,
-                          disabled: true,
+                          //disabled: true,
                           allowBlank: false,
                           maxLength: 10,
                           enforceMaxLength: true,
@@ -353,6 +353,17 @@ Ext.define("MsTraining.view.checkout.CheckoutGrid", {
               ],
             },
           ],
+        },
+      ],
+      buttons: [
+        {
+          text: "Reset",
+          handler: "onResetClick",
+        },
+        {
+          text: "Complete Purchase",
+          width: 150,
+          handler: "onCompleteClick",
         },
       ],
     },
