@@ -22,13 +22,20 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       scrollable: true,
       columns: [
         { dataIndex: "_id", text: "ID" },
-        { dataIndex: "title", text: "Title", flex: 1 },
-        { dataIndex: "body", text: "Body", flex: 2 },
+        { dataIndex: "title", text: "Title", flex: 1, editor: "textfield" },
+        {
+          dataIndex: "body",
+          text: "Body",
+          flex: 2,
+          editor: {
+            xtype: "textarea",
+            allowBlank: false,
+          },
+        },
         { dataIndex: "userId", text: "User ID" },
       ],
       selModel: {
-        selType: "checkboxmodel",
-        mode: "SINGLE",
+        selType: "cellmodel",
       },
       // tbar: [
       //   {
@@ -47,14 +54,20 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       tbar: [
         {
           text: "Add Post",
-
         },
       ],
       listeners: {
         cellclick: "onPostCommentSelected",
       },
       scrollable: true,
+
+      plugins: {
+        rowediting: {
+          clicksToEdit: 1,
+        },
+      },
     },
+
     {
       xtype: "splitter",
     },
@@ -78,8 +91,25 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       columns: [
         { dataIndex: "_id", text: "ID" },
         { dataIndex: "postId", text: "Post ID" },
-        { dataIndex: "name", text: "Name" },
-        { dataIndex: "email", text: "Email" },
+        { dataIndex: "name", text: "Name", editor: "textfield" },
+        {
+          dataIndex: "email",
+          text: "Email",
+          flex: 3,
+          flex: 3,
+          renderer: function (value) {
+            return Ext.String.format(
+              '<a href="mailto:{0}">{1}</a>',
+              value,
+              value
+            );
+          },
+          editor: {
+            xtype: "textfield",
+            completeOnEnter: false,
+            allowBlank: false,
+          },
+        },
         { dataIndex: "body", text: "Body", flex: 2 },
       ],
     },
