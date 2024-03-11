@@ -148,5 +148,16 @@ Ext.define("MsTraining.view.main.Main", {
         html: "{loremIpsum}",
       },
     },
+    {
+      title: "Log out",
+      iconCls: "fas fa-sign-out-alt",
+    },
   ],
+  listeners: {
+    tabchange: function (tabPanel, newCard, oldCard, eOpts) {
+      if (newCard.title === "Log out") {
+        this.getController().onLogout();
+      }
+    },
+  },
 });
