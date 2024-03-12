@@ -26,26 +26,14 @@ Ext.define("MsTraining.view.main.Main", {
       bind: {
         title: "{name}",
       },
+
       region: "west",
       width: 250,
       split: true,
     },
     {
       region: "center",
-      xtype: "tabpanel",
-      items: [
-        {
-          title: "Foo",
-        },
-        {
-          title: "Bar",
-          closable: true,
-          tabConfig: {
-            title: "Custom Title",
-            tooltip: "A button tooltip",
-          },
-        },
-      ],
+      xtype: "mainpanel",
     },
     {
       region: "south",

@@ -37,6 +37,27 @@ Ext.define("MsTraining.store.Menu", {
           },
         ],
       },
+      {
+        text: "Json Placeholder Data",
+        iconCls: "fa fa-database fa-lg",
+        children: [
+          {
+            text: "Users",
+            iconCls: "fa fa-users",
+            leaf: true,
+          },
+          {
+            text: "Todos",
+            iconCls: "fa-solid fa-list",
+            leaf: true,
+          },
+          {
+            text: "Albums",
+            iconCls: "fa-images",
+            leaf: true,
+          },
+        ],
+      },
     ],
   },
 });

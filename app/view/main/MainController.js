@@ -24,4 +24,28 @@ Ext.define("MsTraining.view.main.MainController", {
 
     Ext.widget("login");
   },
+
+  getMainPanel: function name(params) {
+    return Ext.ComponentQuery.query("mainpanel")[0];
+  },
+  onMainMenuItemClick: function (view, record, item, index, e, eOpts) {
+    let mainPanel = this.getMainPanel();
+    console.log(mainPanel);
+    console.log(record);
+
+    let activeTab = mainPanel.items.findBy(
+      (tabItem) => tabItem.title === record.get("text")
+    );
+    
+    if (!activeTab && record.get('leaf')) {
+      // create tab using details from record
+      activeTab = mainPanel.add({
+        xtype: "panel",
+        title: record.get("text"),
+        iconCls: record.get("iconCls"),
+        closable: true,
+      });
+    }
+    mainPanel.setActiveTab(activeTab);
+  },
 });
