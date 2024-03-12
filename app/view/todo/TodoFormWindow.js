@@ -54,6 +54,16 @@ Ext.define("MsTraining.view.todo.TodoFormWindow", {
           },
         },
         {
+          fieldLabel: "Date Completed",
+          xtype: "datefield",
+          name: "dateCompleted",
+          maxValue: Ext.Date.add(new Date()),
+          bind: {
+            value: "{!record.completed}",
+            disabled: "{!record.completed}",
+          },
+        },
+        {
           fieldLabel: "User ID",
           name: "userId",
           bind: {

@@ -11,10 +11,10 @@ Ext.define("MsTraining.view.users.UserGrid", {
   columns: [
     { xtype: "rownumberer" },
     { dataIndex: "_id", text: "User ID" },
-    { dataIndex: "username", text: "Username" },
-    { dataIndex: "name", text: "Name" },
-    { dataIndex: "email", text: "Email" },
-    { dataIndex: "phone", text: "Phone" },
+    { dataIndex: "username", text: "Username", editor: "textfield" },
+    { dataIndex: "name", text: "Name", editor: "textfield" },
+    { dataIndex: "email", text: "Email", editor: "textfield" },
+    { dataIndex: "phone", text: "Phone", editor: "textfield" },
     { dataIndex: "website", text: "Website", flex: 1 },
     { dataIndex: "street", text: "Street" },
     { dataIndex: "suite", text: "Suite" },
@@ -29,6 +29,11 @@ Ext.define("MsTraining.view.users.UserGrid", {
   selModel: {
     selType: "checkboxmodel",
     mode: "SINGLE",
+  },
+  plugins: {
+    rowediting: {
+      clicksToEdit: 1,
+    },
   },
   tbar: [
     {

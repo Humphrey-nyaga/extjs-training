@@ -9,6 +9,8 @@ Ext.define(
     store: {
       type: "todo",
     },
+    bodyPadding: 5,
+
     columns: [
       { xtype: "rownumberer" },
       { dataIndex: "_id", text: "Id" },
@@ -27,19 +29,34 @@ Ext.define(
     },
     tbar: [
       {
-        text: "Add Todo",
+        text: "Add",
+        iconCls: "fas fa-plus",
         listeners: {
           click: "onAddTodo",
         },
       },
       {
-        text: "View Todo",
+        text: "Update",
+        iconCls: "fas fa-edit",
         handler: "onViewTodo",
+        id: "update",
         bind: {
           disabled: "{!todogrid.selection}",
         },
       },
+      {
+        text: "Delete",
+        iconCls: "fas fa-trash",
+        id: "delete",
+        listeners: {
+          click: "onDeleteTodo",
+        },
+        disabled: "true",
+      },
     ],
+    listeners: {
+      cellclick: "onClickCellActivateButtons",
+    },
 
     height: 600,
   }
