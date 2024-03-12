@@ -5,7 +5,6 @@ Ext.define(
     extend: "Ext.grid.Panel",
     xtype: "todogrid",
     controller: "todogridviewcontroller",
-
     title: "Todos",
     store: {
       type: "todo",

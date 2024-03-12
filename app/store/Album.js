@@ -3,7 +3,7 @@ Ext.define("MsTraining.store.Album", {
   alias: "store.album",
   model: "MsTraining.model.Album",
   requires: ["MsTraining.model.Album"],
-  autoLoad: false,
+  autoLoad: true,
   pageSize: 25,
   proxy: {
     type: "rest",

@@ -13,6 +13,7 @@ Ext.define("MsTraining.store.Menu", {
             text: "Users",
             iconCls: "fa fa-users",
             leaf: true,
+            className: "parentpanel",
           },
           {
             text: "Permission",
@@ -28,6 +29,7 @@ Ext.define("MsTraining.store.Menu", {
           {
             text: "Users",
             iconCls: "fa fa-users",
+            className: "parentpanel",
             leaf: true,
           },
           {
@@ -44,16 +46,20 @@ Ext.define("MsTraining.store.Menu", {
           {
             text: "Users",
             iconCls: "fa fa-users",
+            className: "parentpanel",
             leaf: true,
           },
           {
             text: "Todos",
             iconCls: "fa-solid fa-list",
+            className: "todogrid",
+
             leaf: true,
           },
           {
             text: "Albums",
             iconCls: "fa-images",
+            className: "albumgrid",
             leaf: true,
           },
         ],

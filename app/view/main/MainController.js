@@ -43,6 +43,7 @@ Ext.define("MsTraining.view.main.MainController", {
         xtype: "panel",
         title: record.get("text"),
         iconCls: record.get("iconCls"),
+        xtype: record.get('className'),
         closable: true,
       });
     }

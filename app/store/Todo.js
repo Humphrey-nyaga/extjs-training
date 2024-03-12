@@ -3,7 +3,7 @@ Ext.define("MsTraining.store.Todo", {
   model: "MsTraining.model.Todo",
   alias: "store.todo",
   requires: ["MsTraining.model.Todo"],
-  autoLoad: false,
+  autoLoad: true,
   pageSize:25,
   
   proxy: {
