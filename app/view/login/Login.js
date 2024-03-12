@@ -3,14 +3,20 @@ Ext.define("MsTraining.view.login.Login", {
 
   xtype: "login",
   controller: "login",
+  width: 350,
+  height: 300,
+  maximizable: true,
   bodyPadding: 10,
-  title: "Login Window",
+  title: "Login",
   closable: false,
   autoShow: true,
+  layout: "fit",
+
   requires: ["MsTraining.view.login.LoginController", "Ext.form.Panel"],
   items: {
     xtype: "form",
     reference: "form",
+    layout:"anchor",
     items: [
       {
         xtype: "textfield",
