@@ -20,7 +20,7 @@ Ext.define(
     ],
     selModel: {
       selType: "checkboxmodel",
-      mode: "MULTI",
+      mode: "SINGLE",
     },
     bbar: {
       xtype: "pagingtoolbar",
