@@ -39,7 +39,6 @@ Ext.define(
         text: "Update",
         iconCls: "fas fa-edit",
         handler: "onViewTodo",
-        id: "update",
         bind: {
           disabled: "{!todogrid.selection}",
         },
@@ -47,11 +46,12 @@ Ext.define(
       {
         text: "Delete",
         iconCls: "fas fa-trash",
-        id: "delete",
         listeners: {
           click: "onDeleteTodo",
         },
-        disabled: "true",
+        bind: {
+          disabled: "{!todogrid.selection}",
+        },
       },
     ],
     listeners: {

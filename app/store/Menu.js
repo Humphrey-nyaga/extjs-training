@@ -50,10 +50,20 @@ Ext.define("MsTraining.store.Menu", {
             leaf: true,
           },
           {
+            text: "Grouping and Summary",
+            iconCls: "fa fa-users",
+            className: "groupingsummary",
+            leaf: true,
+          },
+          {
             text: "Todos",
             iconCls: "fa-solid fa-list",
             className: "todogrid",
-
+            leaf: true,
+          }, {
+            text: "Comments",
+            iconCls: "fa-solid fa-list",
+            className: "commentgrid",
             leaf: true,
           },
           {
@@ -62,7 +72,19 @@ Ext.define("MsTraining.store.Menu", {
             className: "albumgrid",
             leaf: true,
           },
+          {
+            text: "Checkout",
+            iconCls: "fas fa-shopping-cart",
+            className: "checkoutgrid",
+            leaf: true,
+          },
         ],
+      },
+      {
+        text: "Posts",
+        iconCls: "fa-solid fa-list",
+        className: "postgrid",
+        leaf: true,
       },
     ],
   },

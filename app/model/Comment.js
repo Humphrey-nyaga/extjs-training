@@ -1,23 +1,27 @@
-Ext.define(
-  "MsTraining.model.Comment",
-  {
-    extend: "Ext.data.Model",
-    requires: ["MsTraining.model.Post"],
-    idProperty:"_id",
+Ext.define("MsTraining.model.Comment", {
+  extend: "Ext.data.Model",
+  idProperty: "_id",
+  fields: [
+    "_id",
+    "postId",
+    "name",
+    "email",
+    "body"
 
-    fields: [
-      { name: "postId", reference: "Post", type: "int" }, // define association between objects
-      { name: "_id", type: "int" },
-      { name: "name", type: "string" },
-      { name: "body", type: "string" },
-      { name: "email", type: "string" },
-    ],
+  ],
 
-    validators: [
-      {
-        postId: ["presence"],
-        name: ["presence", { type: "length", min: 7 }],
-      },
-    ],
-  }
-);
+  limit: 25,
+  start: 0,
+  pageSize: 25,
+  proxy: {
+    type: "rest",
+    url: "http://localhost:3000/comments",
+    disableCaching: false,
+  
+    reader: {
+      type: "json",
+      rootProperty: "rows",
+      totalProperty: "totalCount",
+    },
+  },
+});

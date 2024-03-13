@@ -74,6 +74,5 @@ Ext.define("MsTraining.view.todo.TodoGridViewController", {
     let component = Ext.getCmp("deleteTodo");
     console.log(component);
     Ext.getCmp("delete").enable();
-    Ext.getCmp("update").enable();
   },
 });

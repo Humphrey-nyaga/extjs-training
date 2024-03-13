@@ -28,6 +28,7 @@ Ext.define("MsTraining.view.album.AlbumFormWindow", {
         {
           fieldLabel: "Album ID",
           name: "_id",
+          reference: "albumIdField",
           emptyText: "Album ID",
           allowBlank: false,
           xtype: "textfield",

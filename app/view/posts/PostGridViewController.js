@@ -43,16 +43,12 @@ Ext.define("MsTraining.view.post.PostGridViewController", {
     e,
     eOpts
   ) {
-    var grid = this.getView().lookupReference("postcommentsgrid");
-    let commentStore = grid.getStore();
-    console.log(grid)
-      commentStore.reload({
-        params: {
-          postId: record.data._id,
-        },
-        callback: function (records, operation, success) {
-          grid.setHidden(false); 
-        },
-      });
+    var grid = Ext.ComponentQuery.query("commentgrid")[0];
+     let commentStore = grid.getStore();
+    commentStore.reload({
+      params: {
+        postId: record.data._id,
+      },
+    });
   },
 });

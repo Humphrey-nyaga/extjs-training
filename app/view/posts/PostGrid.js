@@ -3,7 +3,7 @@ Ext.define("MsTraining.view.posts.PostGrid", {
   xtype: "postgrid",
 
   controller: "postgridviewcontroller",
-  viewModel: "postviewmodel",
+  
 
   height: 600,
   layout: {
@@ -35,7 +35,8 @@ Ext.define("MsTraining.view.posts.PostGrid", {
         { dataIndex: "userId", text: "User ID" },
       ],
       selModel: {
-        selType: "cellmodel",
+        selType: "checkboxmodel",
+        mode: "SINGLE",
       },
       // tbar: [
       //   {
@@ -72,46 +73,7 @@ Ext.define("MsTraining.view.posts.PostGrid", {
       xtype: "splitter",
     },
     {
-      xtype: "grid",
-      reference: "postcommentsgrid",
-      title: "Comments",
-      flex: 1,
-      // hidden: true,
-      collapsible: true,
-      collapsed: true,
-      collapseDirection: "right",
-      store: { type: "comments" },
-
-      bbar: [
-        {
-          xtype: "pagingtoolbar",
-          displayInfo: true,
-        },
-      ],
-      columns: [
-        { dataIndex: "_id", text: "ID" },
-        { dataIndex: "postId", text: "Post ID" },
-        { dataIndex: "name", text: "Name", editor: "textfield" },
-        {
-          dataIndex: "email",
-          text: "Email",
-          flex: 3,
-          flex: 3,
-          renderer: function (value) {
-            return Ext.String.format(
-              '<a href="mailto:{0}">{1}</a>',
-              value,
-              value
-            );
-          },
-          editor: {
-            xtype: "textfield",
-            completeOnEnter: false,
-            allowBlank: false,
-          },
-        },
-        { dataIndex: "body", text: "Body", flex: 2 },
-      ],
+      xtype: "commentgrid",
     },
   ],
 });
