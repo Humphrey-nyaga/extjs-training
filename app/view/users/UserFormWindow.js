@@ -30,8 +30,9 @@ Ext.define("MsTraining.view.users.UserFormWindow", {
           name: "_id",
           emptyText: "user ID",
           disabled: true,
-          submitValue: false
-        }, {
+          submitValue: false,
+        },
+        {
           fieldLabel: "Name",
           name: "name",
           emptyText: "Full name",
@@ -45,7 +46,9 @@ Ext.define("MsTraining.view.users.UserFormWindow", {
           fieldLabel: "Email",
           name: "email",
           emptyText: "Email",
-        }, {
+          vtype: "email",
+        },
+        {
           fieldLabel: "Phone",
           name: "phone",
           emptyText: "Phone number",
@@ -54,6 +57,7 @@ Ext.define("MsTraining.view.users.UserFormWindow", {
           fieldLabel: "Website",
           name: "website",
           emptyText: "website",
+          vtype: "url",
         },
       ],
       buttons: [

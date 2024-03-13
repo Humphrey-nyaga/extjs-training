@@ -54,4 +54,9 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
       xtype: "modelbindingform",
     });
   },
+  onVTypesClicked: function (btn, e, eOpts) {
+    Ext.create({
+      xtype: "formvtypevalidations",
+    });
+  },
 });

@@ -46,6 +46,12 @@ Ext.define("MsTraining.view.users.UserGrid", {
       text: "Model Binding",
       handler: "onModelBinding",
     },
+    {
+      text: "VTypes",
+      listeners: {
+        click: "onVTypesClicked",
+      },
+    },
     "->",
     {
       text: "SELECT",
