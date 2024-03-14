@@ -11,6 +11,7 @@ Ext.define("MsTraining.view.posts.CommentGrid", {
   scrollable: true,
   collapsible: true,
   collapsed: true,
+  hidden:true,
   collapseDirection: "right",
 
   columns: [

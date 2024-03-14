@@ -36,17 +36,27 @@ Ext.define("MsTraining.view.main.MainController", {
     let activeTab = mainPanel.items.findBy(
       (tabItem) => tabItem.title === record.get("text")
     );
-    
-    if (!activeTab && record.get('leaf')) {
+
+    if (!activeTab && record.get("leaf")) {
       // create tab using details from record
       activeTab = mainPanel.add({
         xtype: "panel",
         title: record.get("text"),
         iconCls: record.get("iconCls"),
-        xtype: record.get('className'),
+        xtype: record.get("className"),
         closable: true,
       });
     }
     mainPanel.setActiveTab(activeTab);
+  },
+
+  routes: {
+    'home': "onHomeRoute",
+  },
+  onHomeRoute: function () {
+    let mainPanel = this.getMainPanel();
+    if (mainPanel) {
+      mainPanel.setActiveTab(0);
+    }
   },
 });

@@ -50,5 +50,6 @@ Ext.define("MsTraining.view.post.PostGridViewController", {
         postId: record.data._id,
       },
     });
+    grid.setHidden(false)
   },
 });
