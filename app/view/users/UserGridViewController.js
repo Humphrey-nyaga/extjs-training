@@ -2,6 +2,13 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
   extend: "Ext.app.ViewController",
   alias: "controller.usergridviewcontroller",
 
+  init: function () {
+    let grid = this.getView(),
+      store = grid.getStore();
+    console.log("Reloading store::: " + store);
+    store.load();
+  },
+
   onAddUserClicked: function (btn, e, eOpts) {
     console.log(btn.getText() + " was clicked");
     var wd = Ext.create({
@@ -35,13 +42,12 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
     e,
     eOpts
   ) {
-  
     console.log(record);
     let me = this;
     let view = me.getView();
     let viewModel = me.getViewModel();
     let refs = me.getReferences();
-    viewModel.set("record", record)
+    viewModel.set("record", record);
   },
   onModelBinding: function (btn, e, eOpts) {
     Ext.create({
@@ -58,7 +64,6 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
     var grid = this.getView();
     let lowerPanel = Ext.ComponentQuery.query("userinfopanel")[0];
 
-
     if (grid.getHeight() === 900) {
       grid.setHeight(450);
       lowerPanel.setHeight(450);
@@ -68,5 +73,14 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
       lowerPanel.setHeight(0);
       btn.setText("Show Form");
     }
+  },
+  onSelectUser: function (id) {
+    let me = this,
+      grid = me.getView(),
+      vm = me.getViewModel(),
+      refs = me.getReferences();
+    let record = grid.getStore().getById(id);
+    vm.set("record", record);
+    grid.getSelectionModel().select(record);
   },
 });

@@ -3,13 +3,12 @@ Ext.define("MsTraining.view.users.UserMinimalGrid", {
   xtype: "userminimalgrid",
   controller: "usergridviewcontroller",
   title: "Users",
-  requires: ["MsTraining.store.Users"],
+  requires: [
+    "MsTraining.store.Users",
+    ,
+    "MsTraining.view.users.UserGridViewController",
+  ],
 
-  init: function () {
-    let grid = this.getView(),
-      store = grid.getStore();
-    store.load();
-  },
   store: {
     type: "users",
   },
@@ -56,16 +55,8 @@ Ext.define("MsTraining.view.users.UserMinimalGrid", {
   },
   listeners: {
     cellclick: "onClickUserRowCell",
+    selectuser: "onSelectUser", // even fired when a user's id is specified in the url
   },
   scrollable: true,
   // height: 900,
-  onSelectUser: function (id) {
-    let me = this,
-      grid = me.getView(),
-      vm = me.getViewModel(),
-      refs = me.getReferences();
-    let record = grid.getStore().findRecord("_id", id);
-    vm.set("record", record);
-    grid.getSelectionModel().select(record);
-  },
 });
