@@ -35,19 +35,13 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
     e,
     eOpts
   ) {
-    const albumStore = Ext.ComponentQuery.query("albumgrid")[0].getStore();
-    const todoStore = Ext.ComponentQuery.query("todogrid")[0].getStore();
-
-    albumStore.reload({
-      params: {
-        userId: record.get("_id"),
-      },
-    });
-    todoStore.reload({
-      params: {
-        userId: record.get("_id"),
-      },
-    });
+  
+    console.log(record);
+    let me = this;
+    let view = me.getView();
+    let viewModel = me.getViewModel();
+    let refs = me.getReferences();
+    viewModel.set("record", record)
   },
   onModelBinding: function (btn, e, eOpts) {
     Ext.create({

@@ -2,6 +2,7 @@ Ext.define("MsTraining.view.users.UserInfoPanel", {
   extend: "Ext.tab.Panel",
   xtype: "userinfopanel",
   height: 0,
+  title:'User Details',
   items: [
     {
       xtype: "form",

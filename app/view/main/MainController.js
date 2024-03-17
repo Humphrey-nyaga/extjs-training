@@ -13,6 +13,13 @@ Ext.define("MsTraining.view.main.MainController", {
       action: "onRoute",
       before: "onBeforeRoute",
     },
+    "users/:id": {
+      action: "onshowUser",
+      before: "onBeforeShowUser",
+      conditions: {
+        ":id": "([0-9]+)",
+      },
+    },
   },
 
   onHomeRoute: function () {
@@ -25,9 +32,11 @@ Ext.define("MsTraining.view.main.MainController", {
   getMainPanel: function () {
     return Ext.ComponentQuery.query("mainpanel")[0];
   },
+
   getMainMenu: function () {
     return Ext.ComponentQuery.query("mainmenu")[0];
   },
+
   onRoute: function () {
     let me = this;
     let hash = Ext.util.History.getToken();
@@ -93,5 +102,39 @@ Ext.define("MsTraining.view.main.MainController", {
   },
   onMainMenuItemClick: function (grid, record, item, index, e, eOpts) {
     this.redirectTo(record.get("className"));
+  },
+
+  onBeforeShowUser: function (id, action) {
+    // get and the grid of the users
+    var me = this,
+      hash = "users",
+      mainMenu = me.getMainMenu();
+    me.locateMenuItem(mainMenu, hash);
+
+    // get grid reference
+    let grid = this.getUserGrid();
+
+    // get the grid store
+    let store = grid.getStore();
+
+    // get the record from store
+    let record = store.findRecord("_id", id);
+    console.log(record);
+        // grid selection model select user
+    if (record) {
+      console.log("Action resumed:::::::::::::::::");
+      action.resume();
+    } else {
+            console.log("Action failed:::::::::::::::::");
+      action.resume();
+    }
+  },
+
+  onshowUser: function (id) {
+    this.getUserGrid().fireEvent("selectuser", id);
+  },
+
+  getUserGrid: function () {
+    return Ext.ComponentQuery.query("userminimalgrid")[0];
   },
 });

@@ -16,11 +16,7 @@
      *      ]
      */
     "requires": [
-        // "font-awesome"
-        {
-          "id": "font-awesome",
-          "version": "6.5.1"
-        }
+        "font-awesome"
     ],
 
     /**
