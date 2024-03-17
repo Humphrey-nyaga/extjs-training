@@ -5,18 +5,26 @@ Ext.define("MsTraining.view.login.Login", {
   controller: "login",
   width: 350,
   height: 300,
-  maximizable: true,
+  maximizable: false,
+  draggable: false,
   bodyPadding: 10,
   title: "Login",
   closable: false,
   autoShow: true,
   layout: "fit",
 
-  requires: ["MsTraining.view.login.LoginController", "Ext.form.Panel"],
+  requires: [
+    "MsTraining.view.login.LoginController",
+    "Ext.form.Panel",
+    "MsTraining.util.Util",
+  ],
   items: {
     xtype: "form",
     reference: "form",
-    layout:"anchor",
+    layout: "anchor",
+    defaults: {
+      afterLabelTextTpl: MsTraining.util.Util.required,
+        },
     items: [
       {
         xtype: "textfield",
@@ -34,6 +42,7 @@ Ext.define("MsTraining.view.login.Login", {
       {
         xtype: "displayfield",
         hideEmptyLabel: false,
+        afterLabelTextTpl:'',
         value: "Enter any non-blank password",
       },
     ],

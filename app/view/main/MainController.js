@@ -126,7 +126,6 @@ Ext.define("MsTraining.view.main.MainController", {
     if (record) {
       action.resume();
     } else {
-
       action.stop();
     }
   },
