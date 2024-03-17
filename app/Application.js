@@ -27,6 +27,7 @@ Ext.define("MsTraining.Application", {
       }
     );
   },
+
   launch: function (profile) {
     var loggedIn;
     loggedIn = localStorage.getItem("MsAppLoggedIn");
@@ -35,7 +36,10 @@ Ext.define("MsTraining.Application", {
       xtype: loggedIn ? "app-main" : "login",
     });
   },
+
+
   defaultToken: "home",
+  
   listen: {
     global: {
       unmatchedroute: "onUnmatchedRoute",

@@ -65,6 +65,16 @@ Ext.define("MsTraining.view.users.UserGrid", {
       },
     },
     "->",
+
+    {
+      text: "Show Form",
+      listeners: {
+        click: "onSelectUserPopulateForm",
+      },
+      bind: {
+        disabled: "{!usergrid.selection}",
+      },
+    },
     {
       text: "SELECT",
       listeners: {

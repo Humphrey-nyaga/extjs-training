@@ -59,4 +59,20 @@ Ext.define("MsTraining.view.users.UserGridViewController", {
       xtype: "formvtypevalidations",
     });
   },
+
+  onSelectUserPopulateForm: function (btn) {
+    var grid = this.getView();
+    let lowerPanel = Ext.ComponentQuery.query("userinfopanel")[0];
+
+
+    if (grid.getHeight() === 900) {
+      grid.setHeight(450);
+      lowerPanel.setHeight(450);
+      btn.setText("Hide Form");
+    } else {
+      grid.setHeight(900);
+      lowerPanel.setHeight(0);
+      btn.setText("Show Form");
+    }
+  },
 });

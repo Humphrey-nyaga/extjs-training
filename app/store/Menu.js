@@ -58,18 +58,14 @@ Ext.define("MsTraining.store.Menu", {
           {
             text: "Todos",
             iconCls: "fa-solid fa-list",
-            className: "todogrid",
-            leaf: true,
-          }, {
-            text: "Comments",
-            iconCls: "fa-solid fa-list",
-            className: "commentgrid",
+            className: "todos",
             leaf: true,
           },
+      
           {
             text: "Albums",
             iconCls: "fa-images",
-            className: "albumgrid",
+            className: "albums",
             leaf: true,
           },
           {
@@ -81,10 +77,22 @@ Ext.define("MsTraining.store.Menu", {
         ],
       },
       {
-        text: "Posts",
-        iconCls: "fa-solid fa-list",
-        className: "postgrid",
-        leaf: true,
+        text: "Routing",
+        iconCls: "fa fa-database fa-lg",
+        children: [
+          {
+            text: "Users",
+            iconCls: "fa fa-users",
+            className: "users",
+            leaf: true,
+          },
+          {
+            text: "Posts",
+            iconCls: "fa-solid fa-list",
+            className: "posts",
+            leaf: true,
+          },
+        ],
       },
     ],
   },

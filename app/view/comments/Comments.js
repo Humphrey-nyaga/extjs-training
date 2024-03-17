@@ -1,0 +1,9 @@
+Ext.define("MsTraining.view.comments.Comments",{
+    extend:"Ext.panel.Panel",
+    xtype:'comments',
+    items:[
+        {
+            xtype:'commentgrid'
+        }
+    ]
+})

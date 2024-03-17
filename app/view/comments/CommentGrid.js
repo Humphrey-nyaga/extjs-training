@@ -1,4 +1,4 @@
-Ext.define("MsTraining.view.posts.CommentGrid", {
+Ext.define("MsTraining.view.comments.CommentGrid", {
   extend: "Ext.grid.Panel",
   xtype: "commentgrid",
 

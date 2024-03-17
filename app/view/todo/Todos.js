@@ -1,0 +1,9 @@
+Ext.define("MsTraining.view.todos.Todos",{
+    extend:"Ext.panel.Panel",
+    xtype:'todos',
+    items:[
+        {
+            xtype:'todogrid'
+        }
+    ]
+})
