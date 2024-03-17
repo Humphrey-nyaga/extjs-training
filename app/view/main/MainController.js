@@ -115,19 +115,15 @@ Ext.define("MsTraining.view.main.MainController", {
     let grid = this.getUserGrid();
 
     // get the grid store
-    let store = grid.getStore();
+     let store = grid.getStore();
+     console.log(store);
 
+    // TODO: This function works at times and fails to retrieve data at other times
     // get the record from store
-    let record = store.findRecord("_id", id);
+    let record = store.getById(id);
     console.log(record);
-        // grid selection model select user
-    if (record) {
-      console.log("Action resumed:::::::::::::::::");
-      action.resume();
-    } else {
-            console.log("Action failed:::::::::::::::::");
-      action.resume();
-    }
+
+    grid.getSelectionModel().select(record);
   },
 
   onshowUser: function (id) {
