@@ -24,31 +24,66 @@ Ext.define("MsTraining.view.login.Login", {
     layout: "anchor",
     defaults: {
       afterLabelTextTpl: MsTraining.util.Util.required,
-        },
+    },
     items: [
       {
         xtype: "textfield",
         name: "username",
-        fieldLabel: "Username",
+        fieldLabel: translations.user,
         allowBlank: false,
       },
       {
         xtype: "textfield",
         name: "password",
         inputType: "password",
-        fieldLabel: "Password",
+        fieldLabel: translations.password,
+        //vtype:'customPass', // eg
         allowBlank: false,
       },
       {
         xtype: "displayfield",
         hideEmptyLabel: false,
-        afterLabelTextTpl:'',
+        afterLabelTextTpl: "",
         value: "Enter any non-blank password",
+      },
+      {
+        xtype: "datefield",
+        fieldLabel: "Date",
       },
     ],
     buttons: [
       {
-        text: "Login",
+        xtype: "splitbutton",
+        reference: "lng-btn",
+        menu: {
+          xtype: "menu",
+          defaults: {
+            listeners: {
+              click: "onMenuItemClick",
+            },
+          },
+          items: [
+            {
+              xtype: "menuitem",
+              iconCls: "en",
+              text: "English",
+            },
+            {
+              xtype: "menuitem",
+              iconCls: "es",
+              text: "Español",
+            },
+            {
+              xtype: "menuitem",
+              iconCls: "pt_BR",
+              text: "Português",
+            },
+          ],
+        },
+      },
+      "->",
+      {
+        text: translations.login,
         formBind: true,
         listeners: {
           click: "onLoginClick",

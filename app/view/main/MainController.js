@@ -9,7 +9,7 @@ Ext.define("MsTraining.view.main.MainController", {
 
   routes: {
     home: "onHomeRoute",
-    "users|posts|todos|albums": {
+    "users|posts|todos|albums|parentpanel|trialbalance": {
       action: "onRoute",
       before: "onBeforeRoute",
     },

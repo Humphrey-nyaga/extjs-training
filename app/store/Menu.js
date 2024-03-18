@@ -61,7 +61,7 @@ Ext.define("MsTraining.store.Menu", {
             className: "todos",
             leaf: true,
           },
-      
+
           {
             text: "Albums",
             iconCls: "fa-images",
@@ -90,6 +90,18 @@ Ext.define("MsTraining.store.Menu", {
             text: "Posts",
             iconCls: "fa-solid fa-list",
             className: "posts",
+            leaf: true,
+          },
+        ],
+      },
+      {
+        text: "Accounting",
+        iconCls: "fa-solid fa-book",
+        children: [
+          {
+            text: "Trial Balance",
+            iconCls: "fa-solid fa-book",
+            className: "trialbalance",
             leaf: true,
           },
         ],
